@@ -2,11 +2,10 @@ class EndPoints {
   //live api
   // static const baseApi = 'https://www.rathnafanhouse.co.in/R4X_live_api/api';
   // static const baseApi = 'https://www.rathnafanhouse.in/R4X_live_API/api';
-  static const baseApi = 'https://rathnafanhouse.in/R4X_live_API/api';
+  // static const baseApi = 'https://www.rathnafanhouse.co.in/R4X_live_API/api';
 
-  //test api
-  // static const baseApi =
-  //     'https://www.rathnafanhouse.co.in/DeliveryTestWebapi/api';
+  // PRODUCTION LIVE API
+  static const baseApi = 'https://www.rathnafanhouse.co.in/R4X_live_API/api';
 
   static const Google_Map_Api = 'Google API Key';
   static const Google_Map_Api2 = 'Google API Key';
