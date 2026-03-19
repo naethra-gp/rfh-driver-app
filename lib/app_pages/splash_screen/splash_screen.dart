@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import '../../app_storage/secure_storage.dart';
 import '../../app_utils/index_app_util.dart';
 
@@ -25,6 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
   getRoute() {
     BoxStorage storage = BoxStorage();
     var token = storage.getLoginToken();
+
     Future.delayed(const Duration(seconds: 3), () async {
       if (token != null) {
         Navigator.pushNamedAndRemoveUntil(
@@ -38,6 +38,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     final dark = RHelperFunction.isDarkMode(context);
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
@@ -47,17 +48,20 @@ class _SplashScreenState extends State<SplashScreen> {
           children: [
             Image.asset(RImages.lightAppLogo),
             const SizedBox(height: RSizes.defaultSpace),
-            SpinKitThreeBounce(
-              itemBuilder: (BuildContext context, int index) {
-                return DecoratedBox(
-                  decoration: BoxDecoration(
-                    color: dark
-                        ? const Color.fromARGB(255, 192, 201, 195)
-                        : RColors.primary,
-                  ),
-                );
-              },
-            )
+
+            // ✅ Replaced SpinKit with CircularProgressIndicator
+            SizedBox(
+              width: 40,
+              height: 40,
+              child: CircularProgressIndicator(
+                strokeWidth: 3,
+                valueColor: AlwaysStoppedAnimation<Color>(
+                  dark
+                      ? const Color.fromARGB(255, 192, 201, 195)
+                      : RColors.primary,
+                ),
+              ),
+            ),
           ],
         ),
       ),

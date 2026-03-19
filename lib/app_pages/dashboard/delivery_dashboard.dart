@@ -1,6 +1,5 @@
 import 'dart:async';
 
-// import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:observe_internet_connectivity/observe_internet_connectivity.dart';

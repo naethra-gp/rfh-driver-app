@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:rfh/app_storage/secure_storage.dart';
 import 'package:rfh/app_utils/index_app_util.dart';
-import 'package:connectivity_plus/connectivity_plus.dart';
 import 'controller/cancel_controller.dart';
 
 class CancelDelivery extends StatefulWidget {
@@ -29,7 +28,6 @@ class _CancelDeliveryState extends State<CancelDelivery> {
 
   CancelController cancelController = CancelController();
 
-  late StreamSubscription<List<ConnectivityResult>> subscription;
   @override
   void initState() {
     super.initState();

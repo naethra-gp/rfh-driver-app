@@ -1,4 +1,3 @@
-import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -17,10 +16,9 @@ void main() async {
 
   // Open the box
   await Hive.openBox('box_Rfh');
-  runApp(DevicePreview(
-    enabled: false,
-    builder: (context) => const MyApp(),
-  ));
+  runApp(
+    const MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {

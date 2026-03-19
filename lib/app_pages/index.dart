@@ -6,5 +6,4 @@ export 'users/log_out/log_out_confirmation.dart';
 export 'cancel_delivery/cancel_delivery.dart';
 export 'sent_otp/sent_otp.dart';
 export 'sent_otp/success_otp.dart';
-export 'google_map/mapPage.dart';
 export 'users/forgotPassword/forgot_password.dart';

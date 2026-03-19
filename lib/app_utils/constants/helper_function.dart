@@ -1,6 +1,4 @@
 import 'dart:async';
-
-import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:geocoding/geocoding.dart';
@@ -36,22 +34,6 @@ class RHelperFunction {
       }
     } catch (e) {
       return {'error': e.toString()};
-    }
-  }
-
-  void handleLocation(context, address) async {
-    // print('in-app map called');
-    bool hasInternet = await InternetConnectivity().hasInternetConnection;
-    if (hasInternet) {
-      Map<String, String>? deliveryCoordinate = await getLocation(address);
-      if (!deliveryCoordinate.containsKey('error')) {
-        Navigator.pushNamed(context, 'mapPage', arguments: deliveryCoordinate);
-      } else {
-        alertService.errorToast(
-            "The coordinate for the given address is not found $deliveryCoordinate");
-      }
-    } else {
-      alertService.errorToast('Please check your internet connection..');
     }
   }
 
@@ -114,12 +96,7 @@ class RHelperFunction {
   }
 
   Future<bool> checkInternetConnection() async {
-    var connectivityResult = await Connectivity().checkConnectivity();
-    if (connectivityResult.contains(ConnectivityResult.none)) {
-      return false;
-    } else {
-      return true;
-    }
+    return await InternetConnectivity().hasInternetConnection;
   }
 }
 

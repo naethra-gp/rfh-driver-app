@@ -43,10 +43,6 @@ class AppRoute {
 
         case "successOtp":
           return const SuccessOtp();
-        case "mapPage":
-          final Map<String, String>? deliveryCoordinate =
-              settings.arguments as Map<String, String>?;
-          return MapPage(deliveryCoordinate: deliveryCoordinate);
       }
       return const LoginPage();
     });
