@@ -3,8 +3,8 @@
 <!-- Add the INTERNET permission -->
     <uses-permission android:name="android.permission.INTERNET" />
      <!-- Required permissions -->
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+    <!-- <uses-permission android:name="android.permission.FOREGROUND_SERVICE" /> -->
+    <!-- <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/> -->
     <application
         android:label="R4X"
         android:name="${applicationName}"
